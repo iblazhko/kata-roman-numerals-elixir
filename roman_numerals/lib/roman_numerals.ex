@@ -1,18 +1,20 @@
 defmodule RomanNumerals do
   @moduledoc """
-  Documentation for RomanNumerals.
+  Roman numerals.
   """
 
   @doc """
-  Hello world.
+  Converts number to its roman numerals representation.
 
   ## Examples
 
-      iex> RomanNumerals.hello()
-      :world
+  //    iex> RomanNumerals.romanize(10)
+  //    X
 
+  //    iex> RomanNumerals.romanize(1954)
+  //    MCMLIV
   """
-  def hello do
-    :world
+  def romanize(number) do
+    ""
   end
 end
