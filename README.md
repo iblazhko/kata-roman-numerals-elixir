@@ -64,3 +64,9 @@ numbers, as in these examples:
     1990 (M+CM+XC) = MCMXC
     2014 (MM+X+IV) = MMXIV
     2018 = MMXVIII.
+
+## Implementation Notes
+
+This kata uses [Elixir](https://elixir-lang.org/) language and follows
+[Introduction to Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
+tutorial for the solution structure.
