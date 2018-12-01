@@ -13,4 +13,9 @@ defmodule RomanNumeralsTest do
   test "number 5 converts to V" do
     assert RomanNumerals.romanize(5) == "V"
   end
+
+  test "number 2 converts to II" do
+    assert RomanNumerals.romanize(2) == "II"
+  end
+
 end
