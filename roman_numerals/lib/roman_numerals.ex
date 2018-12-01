@@ -15,6 +15,9 @@ defmodule RomanNumerals do
   //    MCMLIV
   """
   def romanize(number) do
-    ""
+    case number do
+      0 -> ""
+      1 -> "I"
+    end
   end
 end
