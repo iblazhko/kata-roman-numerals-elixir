@@ -2,7 +2,7 @@ defmodule RomanNumeralsTest do
   use ExUnit.Case
   doctest RomanNumerals
 
-  test "greets the world" do
-    assert RomanNumerals.hello() == :world
+  test "number 0 converts to an empty string" do
+    assert RomanNumerals.romanize(0) == ""
   end
 end
