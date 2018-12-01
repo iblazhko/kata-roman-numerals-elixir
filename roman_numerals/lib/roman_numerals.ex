@@ -3,6 +3,11 @@ defmodule RomanNumerals do
   Roman numerals.
   """
 
+  @numerals %{
+    0 => "",
+    1 => "I",
+    5 => "V"}
+
   @doc """
   Converts number to its roman numerals representation.
 
@@ -15,10 +20,6 @@ defmodule RomanNumerals do
   //    MCMLIV
   """
   def romanize(number) do
-    case number do
-      0 -> ""
-      1 -> "I"
-      5 -> "V"
-    end
+    @numerals[number]
   end
 end
