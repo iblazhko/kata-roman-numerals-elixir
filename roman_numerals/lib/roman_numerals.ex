@@ -18,6 +18,7 @@ defmodule RomanNumerals do
     case number do
       0 -> ""
       1 -> "I"
+      5 -> "V"
     end
   end
 end
