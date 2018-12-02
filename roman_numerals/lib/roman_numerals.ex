@@ -6,7 +6,9 @@ defmodule RomanNumerals do
   @buckets %{
     0 => "",
     1 => "I",
-    5 => "V"}
+    5 => "V",
+    4 => "IV"
+  }
 
   defp find_largest_bucket(number) do
     is_full? = fn v,_ -> v <= number end
