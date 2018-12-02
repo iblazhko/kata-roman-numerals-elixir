@@ -39,6 +39,10 @@ defmodule RomanNumerals do
     process_bucket(numerals++[bucket_numerals], reminder-bucket_value)
   end
 
+  def romanize(number) when number < 0 do
+    raise ArgumentError
+  end
+
   @doc """
   Converts number to its roman numerals representation.
 
