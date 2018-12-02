@@ -66,7 +66,27 @@ defmodule RomanNumeralsTest do
     assert RomanNumerals.romanize(3000) == "MMM"
   end
 
-  test "number 4 converts to IV" do
+  test "subtractive notation: number 4 converts to IV" do
     assert RomanNumerals.romanize(4) == "IV"
+  end
+
+  test "subtractive notation: number 9 converts to IX" do
+    assert RomanNumerals.romanize(9) == "IX"
+  end
+
+  test "subtractive notation: number 40 converts to XC" do
+    assert RomanNumerals.romanize(40) == "XL"
+  end
+
+  test "subtractive notation: number 90 converts to XC" do
+    assert RomanNumerals.romanize(90) == "XC"
+  end
+
+  test "subtractive notation: number 400 converts to CD" do
+    assert RomanNumerals.romanize(400) == "CD"
+  end
+
+  test "subtractive notation: number 900 converts to CM" do
+    assert RomanNumerals.romanize(900) == "CM"
   end
 end
