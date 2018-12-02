@@ -37,6 +37,10 @@ defmodule RomanNumerals do
     process_bucket(numerals++[bucket_numerals], reminder-bucket_value)
   end
 
+  @doc """
+  Negative numbers or numbers greater or equal to 4000 cannot be converted to
+  roman numerals representation.
+  """
   def romanize(number) when number < 0 or number >= 4000 do
     raise ArgumentError
   end
