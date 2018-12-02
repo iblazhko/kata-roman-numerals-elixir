@@ -39,7 +39,7 @@ defmodule RomanNumerals do
     process_bucket(numerals++[bucket_numerals], reminder-bucket_value)
   end
 
-  def romanize(number) when number < 0 do
+  def romanize(number) when number < 0 or number >= 4000 do
     raise ArgumentError
   end
 
