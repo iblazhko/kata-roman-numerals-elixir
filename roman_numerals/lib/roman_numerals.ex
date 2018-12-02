@@ -44,11 +44,20 @@ defmodule RomanNumerals do
 
   ## Examples
 
-  //    iex> RomanNumerals.romanize(10)
-  //    X
+      iex> RomanNumerals.romanize(1)
+      "I"
 
-  //    iex> RomanNumerals.romanize(1954)
-  //    MCMLIV
+      iex> RomanNumerals.romanize(5)
+      "V"
+
+      iex> RomanNumerals.romanize(4)
+      "IV"
+
+      iex> RomanNumerals.romanize(1984)
+      "MCMLXXXIV"
+
+      iex> RomanNumerals.romanize(2018)
+      "MMXVIII"
   """
   def romanize(number) do
     process_bucket([], number)

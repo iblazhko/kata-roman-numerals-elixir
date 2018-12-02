@@ -89,4 +89,15 @@ defmodule RomanNumeralsTest do
   test "subtractive notation: number 900 converts to CM" do
     assert RomanNumerals.romanize(900) == "CM"
   end
+
+  test "mixed numbers should convert using additive pattern" do
+    assert RomanNumerals.romanize(39) == "XXXIX"
+    assert RomanNumerals.romanize(207) == "CCVII"
+    assert RomanNumerals.romanize(246) == "CCXLVI"
+    assert RomanNumerals.romanize(1066) == "MLXVI"
+    assert RomanNumerals.romanize(1776) == "MDCCLXXVI"
+    assert RomanNumerals.romanize(1873) == "MDCCCLXXIII"
+    assert RomanNumerals.romanize(1984) == "MCMLXXXIV"
+    assert RomanNumerals.romanize(2018) == "MMXVIII"
+  end
 end
