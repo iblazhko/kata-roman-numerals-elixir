@@ -2,6 +2,10 @@ defmodule RomanNumeralsTest do
   use ExUnit.Case
   doctest RomanNumerals
 
+  test "negative number cannot be converted to a roman numeral" do
+    assert_raise ArgumentError, fn -> RomanNumerals.romanize(-1) end
+  end
+
   test "number 0 converts to an empty string" do
     assert RomanNumerals.romanize(0) == ""
   end
