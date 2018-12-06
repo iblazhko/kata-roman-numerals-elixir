@@ -3,111 +3,89 @@ defmodule RomanNumeralsTest do
   doctest RomanNumerals
 
   test "negative numbers cannot be converted to a roman numeral" do
-    assert_raise ArgumentError, fn -> RomanNumerals.romanize(-1) end
+    test_cases = [
+      -1,
+      -2,
+      -100
+    ]
+    for number <- test_cases do
+      assert_raise ArgumentError, fn -> RomanNumerals.romanize(number) end
+    end
   end
 
   test "numbers over 4000 cannot be converted to a roman numeral" do
-    assert_raise ArgumentError, fn -> RomanNumerals.romanize(4000) end
-    assert_raise ArgumentError, fn -> RomanNumerals.romanize(4001) end
-    assert_raise ArgumentError, fn -> RomanNumerals.romanize(5000) end
+    test_cases = [
+      4000,
+      4001,
+      5000
+    ]
+    for number <- test_cases do
+      assert_raise ArgumentError, fn -> RomanNumerals.romanize(number) end
+    end
   end
 
   test "number 0 converts to an empty string" do
     assert RomanNumerals.romanize(0) == ""
   end
 
-  test "single letter numerals: number 1 converts to I" do
-    assert RomanNumerals.romanize(1) == "I"
+  test "single letter numerals" do
+    test_cases = [
+      {    1, "I" },
+      {    5, "V" },
+      {   10, "X" },
+      {   50, "L" },
+      {  100, "C" },
+      {  500, "D" },
+      { 1000, "M" }
+    ]
+    for {number, roman} <- test_cases do
+      assert RomanNumerals.romanize(number) == roman, "#{number} -> #{roman}"
+    end
   end
 
-  test "single letter numerals: number 5 converts to V" do
-    assert RomanNumerals.romanize(5) == "V"
+  test "same letter numerals" do
+    test_cases = [
+      {    2, "II"  },
+      {    3, "III" },
+      {   20, "XX"  },
+      {   30, "XXX" },
+      {  200, "CC"  },
+      {  300, "CCC" },
+      { 2000, "MM"  },
+      { 3000, "MMM" }
+    ]
+    for {number, roman} <- test_cases do
+      assert RomanNumerals.romanize(number) == roman, "#{number} -> #{roman}"
+    end
   end
 
-  test "single letter numerals: number 10 converts to X" do
-    assert RomanNumerals.romanize(10) == "X"
-  end
-
-  test "single letter numerals: number 50 converts to L" do
-    assert RomanNumerals.romanize(50) == "L"
-  end
-
-  test "single letter numerals: number 100 converts to C" do
-    assert RomanNumerals.romanize(100) == "C"
-  end
-
-  test "single letter numerals: number 500 converts to D" do
-    assert RomanNumerals.romanize(500) == "D"
-  end
-
-  test "single letter numerals: number 1000 converts to M" do
-    assert RomanNumerals.romanize(1000) == "M"
-  end
-
-  test "same letter numerals: number 2 converts to II" do
-    assert RomanNumerals.romanize(2) == "II"
-  end
-
-  test "same letter numerals: number 3 converts to III" do
-    assert RomanNumerals.romanize(3) == "III"
-  end
-
-  test "same letter numerals: number 20 converts to XX" do
-    assert RomanNumerals.romanize(20) == "XX"
-  end
-
-  test "same letter numerals: number 30 converts to XXX" do
-    assert RomanNumerals.romanize(30) == "XXX"
-  end
-
-  test "same letter numerals: number 200 converts to CC" do
-    assert RomanNumerals.romanize(200) == "CC"
-  end
-
-  test "same letter numerals: number 300 converts to CCC" do
-    assert RomanNumerals.romanize(300) == "CCC"
-  end
-
-  test "same letter numerals: number 2000 converts to MM" do
-    assert RomanNumerals.romanize(2000) == "MM"
-  end
-
-  test "same letter numerals: number 3000 converts to MMM" do
-    assert RomanNumerals.romanize(3000) == "MMM"
-  end
-
-  test "subtractive notation: number 4 converts to IV" do
-    assert RomanNumerals.romanize(4) == "IV"
-  end
-
-  test "subtractive notation: number 9 converts to IX" do
-    assert RomanNumerals.romanize(9) == "IX"
-  end
-
-  test "subtractive notation: number 40 converts to XC" do
-    assert RomanNumerals.romanize(40) == "XL"
-  end
-
-  test "subtractive notation: number 90 converts to XC" do
-    assert RomanNumerals.romanize(90) == "XC"
-  end
-
-  test "subtractive notation: number 400 converts to CD" do
-    assert RomanNumerals.romanize(400) == "CD"
-  end
-
-  test "subtractive notation: number 900 converts to CM" do
-    assert RomanNumerals.romanize(900) == "CM"
+  test "subtractive notation" do
+    test_cases = [
+      {    4, "IV" },
+      {    9, "IX" },
+      {   40, "XL" },
+      {   90, "XC" },
+      {  400, "CD" },
+      {  900, "CM" }
+    ]
+    for {number, roman} <- test_cases do
+      assert RomanNumerals.romanize(number) == roman, "#{number} -> #{roman}"
+    end
   end
 
   test "mixed numbers should convert using additive pattern" do
-    assert RomanNumerals.romanize(39) == "XXXIX"
-    assert RomanNumerals.romanize(207) == "CCVII"
-    assert RomanNumerals.romanize(246) == "CCXLVI"
-    assert RomanNumerals.romanize(1066) == "MLXVI"
-    assert RomanNumerals.romanize(1776) == "MDCCLXXVI"
-    assert RomanNumerals.romanize(1873) == "MDCCCLXXIII"
-    assert RomanNumerals.romanize(1984) == "MCMLXXXIV"
-    assert RomanNumerals.romanize(2018) == "MMXVIII"
+    test_cases = [
+      {   39, "XXXIX"       },
+      {  207, "CCVII"       },
+      {  246, "CCXLVI"      },
+      { 1066, "MLXVI"       },
+      { 1766, "MDCCLXVI"    },
+      { 1873, "MDCCCLXXIII" },
+      { 1984, "MCMLXXXIV"   },
+      { 2018, "MMXVIII"     }
+    ]
+    for {number, roman} <- test_cases do
+      assert RomanNumerals.romanize(number) == roman, "#{number} -> #{roman}"
+    end
   end
 end
