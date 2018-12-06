@@ -41,7 +41,7 @@ defmodule RomanNumerals do
   Negative numbers or numbers greater or equal to 4000 cannot be converted to
   roman numerals representation.
   """
-  def romanize(number) when number < 0 or number >= 4000 do
+  def romanize(number) when is_number(number) and (number < 0 or number >= 4000) do
     raise ArgumentError
   end
 
@@ -65,7 +65,7 @@ defmodule RomanNumerals do
       iex> RomanNumerals.romanize(2018)
       "MMXVIII"
   """
-  def romanize(number) do
+  def romanize(number) when is_number(number) do
     process_bucket([], number)
   end
 end
