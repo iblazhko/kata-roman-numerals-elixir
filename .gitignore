@@ -7,4 +7,5 @@
 .elixir_ls/
 *.beam
 *.ez
+*.tar
 erl_crash.dump
