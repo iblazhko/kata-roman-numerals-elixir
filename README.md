@@ -5,7 +5,6 @@
 Following is the excerpt from Wiklipedia article
 <https://en.wikipedia.org/wiki/Roman_numerals>.
 
-
 Numbers in Roman Numerals system are represented by combinations
 of letters from the Latin alphabet. Roman numerals, as used today,
 are based on seven symbols:
@@ -51,7 +50,8 @@ descending sequence from left to right, as with Arabic numerals. For example:
     39 = "Thirty nine" (XXX+IX) = XXXIX.
     246 = "Two hundred and forty six" (CC+XL+VI) = CCXLVI.
 
-As each place has its own notation there is no need for place keeping zeros, so "missing places" are ignored, as in Latin (and English) speech, thus:
+As each place has its own notation there is no need for place keeping zeros, so
+"missing places" are ignored, as in Latin (and English) speech, thus:
 
     207 = "Two hundred and seven" (CC+VII) = CCVII
     1066 = "A thousand and sixty six" (M+LX+VI) = MLXVI.
